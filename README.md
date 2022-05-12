@@ -44,12 +44,10 @@ When you are done, upload your files to a github repo and send that link to us i
 
 ## Notes
 
-1. pensare che ci possono essere degli errori in battitura (quindi LowerCase) e dubbi sull'esistenza di movies e generi. 
+1. In the second exercise, it is possible to expand the code to take into consideration the possible existence doubt, thinking that there may be typing errors (therefore LowerCase) and doubts about the existence of the elements.
 
-2. Dal momento in cui aggiungi un nuovo film con la funziona non abbiamo verificato che tutti i campi esistano già. 
+2. From the moment we add a new movie with the method we have not verified that all fields already exist. 
 
-3. Da considerare i test (mancanza di tempo)
+3. To consider the possibility of being able to do tests (not done due to lack of time)
 
-4. perche hai lasciato i commenti# movie-code
-# movie-code
-# movie-code
+4. The comments at the bottom of the 'index' page are the different console.log tests made to test the correct functionality of the method.

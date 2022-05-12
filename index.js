@@ -1,15 +1,17 @@
 const moviesJson = require("./movies.json");
 class MovieAPI {
   constructor(movies) {
-    this.movies = movies.map(this.addRatingAndId);;
+    // 1. (REQUIRED) When instantiating the class with the imported movies.json file, 
+    // add an “id” and a random “rating” from 1 to 5 for each movie before storing it.
+    this.movies = movies.map(this.addRatingAndId);
   }
 
   addRatingAndId(movie, i) {
     return {
       ...movie,
       id: i,
-      rating: Math.floor(Math.random() * 5) + 1
-    }
+      rating: Math.floor(Math.random() * 5) + 1,
+    };
   }
 
   // 2. A method that returns movies from a certain genre.
@@ -82,9 +84,8 @@ class MovieAPI {
 
   //  9. A method that allows the user to add a new movie object to the movie list (supply all properties but the “id” and “rating”.
   // The “id” and “rating” properties should be added internally by the method.
-
   addMovie(description, sources, subtitle, thumb, title, genre) {
-    const movie = {description, sources, subtitle, thumb, title, genre};
+    const movie = { description, sources, subtitle, thumb, title, genre };
     this.movies.push(this.addRatingAndId(movie, this.movies.length));
   }
 
@@ -92,14 +93,14 @@ class MovieAPI {
   returnMovieById(id) {
     return this.movies.filter((movie) => movie.id === id);
   }
+
   // 11. A method that changes the title of a movie with a certain id (if found).
   //The updated title should be sent in as an argument to the method.
-  changeTitle (id, title){
-    this.movies.forEach(movie => {
-      if(movie.id === id){
+  changeTitle(id, title) {
+    this.movies.forEach((movie) => {
+      if (movie.id === id) {
         movie.title = title;
-      } 
-
+      }
     });
   }
 
@@ -109,9 +110,7 @@ class MovieAPI {
 }
 
 const API = new MovieAPI(moviesJson);
-
-// const allMovies = API.fetchAllMovies();
-// console.log(allMovies);
+const allMovies = API.fetchAllMovies();
 
 // API.deleteMovieById(3);
 // console.log(API.fetchAllMovies());
@@ -136,6 +135,6 @@ const API = new MovieAPI(moviesJson);
 //   "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
 // ], "Pippa", "images/ForBiggerJoyrides.jpg", "Carmela Pippa", "Comedy");
 
-// API. changeTitle (13, "Puzzetta")
+// API. changeTitle (13, "Mia")
 
 // console.log(API.fetchAllMovies());
